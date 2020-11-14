@@ -9,7 +9,7 @@ returns a value, that value will be logged to the console.  An example of this w
 */
 
 /*
-Task 1a - Voting Age - small change REMOVE THIS TEXT
+Task 1a - Voting Age
 
 Do the following:   
    1. Make a variable called votingAge and give it a value
@@ -18,7 +18,15 @@ Do the following:
    HINT: no function required
 */
 
+let votingAge = 19;
 
+if (votingAge > 18) {
+  console.log("You can Vote!")
+} else if (votingAge === 18) {
+  console.log("You can still Vote!")
+} else if (votingAge < 18) {
+  console.log("You can't Vote :(")
+}
 
 /*
 Task 1b - Values
@@ -31,7 +39,12 @@ Do the following:
    HINT: no function required
 */
 
+let num1 = 20
+let num2 = 7
 
+if (num1 > num2) {
+  console.log(num1 - num2) 
+}
 
 
 
@@ -46,8 +59,8 @@ Do the following:
    HINT: look up the Number method
 */
 
-
-
+let num3 = parseInt("1999")
+console.log(num3)
 
 /*
 Task 1d - Multiply
@@ -58,8 +71,8 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
+function multiply(a, b){
+    return a * b;
   }
 
 
@@ -74,8 +87,8 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
+function dogYears (humanYears){
+  return humanYears * 7
 }
 
 
@@ -107,8 +120,16 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight, age){
+  if (age >=1) {
+    if (weight <= 5) {
+      return weight * .05;
+    } else if (weight >= 6 && weight <= 10) {
+      return weight * .04;
+    }else {
+      return weight * .03;
+    }
+  }
   }
 
 
@@ -133,7 +154,22 @@ Use the game function below to do the following:
 */
 
 function game(user, computer){
-    /*add your code here*/
+    if (computer < 0.33) {
+      computer = "rock";
+    } else if (computer < 0.66) {
+      computer = "paper"
+    } else if (computer < 0.99) {
+      computer = "scissors"
+    }
+    if (user === "rock" && computer === "scissors" || user === "paper" && computer === "rock" || user === "scissors" && computer === "paper") {
+      return "you win!"
+    }
+    else if (computer === "rock" && user === "scissors" || computer === "paper" && user === "rock" || computer === "scissors" && user === "paper") {
+      return "you lose!"
+    }
+    else if (computer === "rock" && user === "rock" || computer === "paper" && user === "paper" || computer === "scissors" && user === "scissors") {
+      return "it's a tie"
+    }
 }
   
   
